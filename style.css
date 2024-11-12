@@ -1,0 +1,93 @@
+/* Estilos do Cabeçalho */
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #271698;
+    padding: 10px 20px;
+}
+
+/* Logo */
+.logo {
+    flex: 1;
+}
+
+.logo img {
+    height: 90px; /* ajuste o tamanho da logo conforme necessário */
+}
+
+/* Menu de Navegação */
+.menu {
+    flex: 2;
+    display: flex;
+    justify-content: center; /* Centraliza o menu */
+    gap: 50px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace; /* Fonte semelhante à da imagem */
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #AEADF0;
+}
+
+/* Toggle Switch para Modo Escuro/Claro */
+/* From Uiverse.io by Madflows */ 
+.toggle-switch {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    margin-left: auto; /* Empurra o toggle para a extrema direita */
+    --light: #d8dbe0;
+    --dark: #28292c;
+}
+
+.switch-label {
+    position: absolute;
+    width: 100%; /* Preenche toda a largura do toggle */
+    height: 100%;
+    background-color: var(--dark);
+    border-radius: 25px;
+    cursor: pointer;
+    border: 1px solid var(--dark);
+}
+
+.checkbox {
+    display: none; /* Esconde o checkbox */
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+    background-color: var(--light);
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--dark);
+    box-shadow: inset 12px -4px 0px 0px var(--light);
+    transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+    transform: translateX(50px);
+    background-color: var(--dark);
+    box-shadow: none;
+}
