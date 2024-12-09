@@ -1,93 +1,137 @@
-/* Estilos do Cabeçalho */
+/* Estilos Gerais */
+body {
+    background-color: #260c3f;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
 .cabecalho {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #271698;
-    padding: 10px 20px;
+    padding: 20px 50px;
+    background: linear-gradient(90deg, #000000, #241533);
+    border-radius: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Logo */
 .logo {
-    flex: 1;
-}
-
-.logo img {
-    height: 90px; /* ajuste o tamanho da logo conforme necessário */
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
 }
 
 /* Menu de Navegação */
 .menu {
-    flex: 2;
     display: flex;
-    justify-content: center; /* Centraliza o menu */
-    gap: 50px;
+    gap: 30px;
 }
 
 .menu a {
     color: white;
     text-decoration: none;
-    font-family: 'Courier New', Courier, monospace; /* Fonte semelhante à da imagem */
-    font-size: 20px;
+    font-size: 18px;
     transition: color 0.3s;
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu a.active {
     color: #AEADF0;
+    border-bottom: 2px solid #AEADF0;
 }
 
-/* Toggle Switch para Modo Escuro/Claro */
-/* From Uiverse.io by Madflows */ 
-.toggle-switch {
-    position: relative;
-    width: 100px;
-    height: 50px;
-    margin-left: auto; /* Empurra o toggle para a extrema direita */
-    --light: #d8dbe0;
-    --dark: #28292c;
+/* Apresentação */
+.apresentacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 50px;
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: left;
 }
 
-.switch-label {
-    position: absolute;
-    width: 100%; /* Preenche toda a largura do toggle */
-    height: 100%;
-    background-color: var(--dark);
-    border-radius: 25px;
-    cursor: pointer;
-    border: 1px solid var(--dark);
+.conteudo h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+   
 }
 
-.checkbox {
-    display: none; /* Esconde o checkbox */
+.nome {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-left: 15px;
 }
 
-.slider {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-    transition: 0.3s;
+.descricao {
+    font-size: 22px;
+    color: #AEADF0;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
-.checkbox:checked ~ .slider {
-    background-color: var(--light);
-}
-
-.slider::before {
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 25px;
-    height: 25px;
+/* Avatar */
+.avatar img {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    background-color: var(--dark);
-    box-shadow: inset 12px -4px 0px 0px var(--light);
-    transition: 0.3s;
+    object-fit: cover;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    border: 5px solid #4e4cdb;
+    transition: transform 0.3s ease-in-out;
 }
 
-.checkbox:checked ~ .slider::before {
-    transform: translateX(50px);
-    background-color: var(--dark);
-    box-shadow: none;
+.avatar img:hover {
+    transform: scale(1.05);
+}
+
+/* Botão Voltar ao Topo */
+.btn-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4e4cdb;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: none;
+    font-size: 18px;
+}
+
+.btn-top:hover {
+    background-color: #3b39a1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .apresentacao {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .avatar img {
+        width: 150px;
+        height: 150px;
+    }
 }

@@ -3,36 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Leticia</title>
+    <meta name="description" content="Portfólio de Leticia Dias, desenvolvedora full stack com experiência em projetos web e aplicações full stack.">
+    <title>Portfólio Leticia Dias</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Biblioteca AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
 
     <!-- Cabeçalho -->
     <header class="cabecalho">
-        <!-- Logo -->
         <div class="logo">
-            <img src="assets/imagens/logolet.png" alt="Logo do Meu Site">
+            <span>&lt;/&gt; Leticia</span>
         </div>
-        
-        <!-- Menu de Navegação -->
-        <nav class="menu">
-            <a href="#home">Home</a>
-            <a href="#portfolio">Portfólio</a>
-            <a href="#about">Sobre Mim</a>
-            <a href="#curriculum">Currículo</a>
+        <nav class="menu" aria-label="Menu principal">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">Sobre mim</a>
             <a href="#projects">Projetos</a>
             <a href="#education">Formação</a>
+            <a href="certificados">Certificados</a>
+            <a href="#curriculum">Currículo</a>
         </nav>
-
-        <!-- Toggle Switch para Modo Escuro/Claro
-        <div class="toggle-switch">
-            <label class="switch-label">
-              <input type="checkbox" class="checkbox">
-              <span class="slider"></span>
-            </label>
-        </div>  -->
     </header>
+
+    <!-- Apresentação -->
+    <section class="apresentacao" id="about">
+        <div class="conteudo" data-aos="fade-right">
+            <h2>👩‍💻 Olá, Meu nome é</h2>
+            <h1 class="nome">Leticia Dias</h1>
+            <h3 class="descricao">Desenvolvedora Full Stack</h3>
+            <p class="introducao">
+                Sou Leticia, tenho 24 anos, com 4 anos de experiência em tecnologia. Há 3 meses migrei para a área de Dados e sou estudante de front-end e back-end.
+            </p>
+        </div>
+        <div class="avatar" data-aos="fade-left">
+            <img src="assets/imagens/img.jpeg" alt="Foto de Leticia Dias, desenvolvedora full stack">
+        </div>
+    </section>
+
+    <!-- Biblioteca AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 </html>
